@@ -13,6 +13,9 @@
 - `README.md` — Aula de consórcio — página de inscrição
 - `script.js` — Interações da página: animações, contagem, simulador e formulário de inscrição.
 - `style.css` — Aula de consórcio — fundo preto, letras brancas e vermelhas, elementos em vermelho
+- `_ferramentas/baixar_fontes.mjs` — Baixa Clash Display + Satoshi (Fontshare, licença ITF Free Font: uso comercial liberado)
+- `fonts/fontes.css` — gerado por _ferramentas/baixar_fontes.mjs
+- `fonts/` (+6 imagens/sons/outros)
 
 ## Regras (SITES)
 - HTML/CSS/JS puros, sem framework, salvo indicação no próprio projeto. Armadilhas: `acervo licoes -t web`.
