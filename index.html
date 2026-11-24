@@ -10,21 +10,24 @@
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Cpath d='M8 22V13l8-5 8 5v9h-5v-6h-6v6z' fill='%23e50914'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="preload" href="fonts/clash-display-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/satoshi-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fontes.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <div class="cursor" aria-hidden="true"><span></span></div>
 
   <!-- LETREIRO + PROGRESSO -->
   <div class="topo-fixo">
     <div class="letreiro" aria-label="Quarta-feira · Ao vivo no Google Meet">
       <div class="letreiro-trilha" aria-hidden="true">
-        <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
-        <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
-        <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
-        <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
+        <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Menos de 1 hora</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
+        <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Menos de 1 hora</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
+        <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Menos de 1 hora</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
+        <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Menos de 1 hora</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
       </div>
     </div>
     <div class="progresso"><span></span></div>
@@ -32,6 +35,7 @@
 
   <!-- DOBRA 1: PROMESSA + FORMULÁRIO -->
   <header class="hero" id="topo">
+    <canvas class="hero-pontos" aria-hidden="true"></canvas>
     <div class="hero-fundo" aria-hidden="true">
       <svg class="casa-desenho" viewBox="0 0 600 600">
         <path class="traco" d="M80 300 300 110l220 190"/>
@@ -46,8 +50,8 @@
       <div class="hero-texto">
         <p class="selo entrar" style="--d:0"><span class="ponto-vivo"></span> Aula ao vivo</p>
         <h1 class="titulo-animado">
-          Aprenda em <em>menos de uma hora</em> a construir patrimônio através de
-          <em>cartas de crédito</em>
+          Aprenda em <em>menos de 1 hora</em> a construir patrimônio através de
+          <em class="sublinhar">cartas de crédito</em>
         </h1>
         <p class="hero-sem entrar" style="--d:6">
           <span>Sem pagar juros.</span>
@@ -57,21 +61,6 @@
           Faça parte da nova geração de brasileiros que buscam um planejamento
           <strong>seguro e confiável</strong> para a construção de patrimônio.
         </p>
-        <ul class="hero-info entrar" style="--d:8">
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-            <span><b>Quarta-feira</b></span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
-            <span><b>Ao vivo</b> no Google Meet</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span>Menos de <b>1 hora</b></span>
-          </li>
-        </ul>
-
         <div class="contagem entrar" style="--d:9" hidden>
           <p>A aula começa em</p>
           <div class="contagem-caixas">
@@ -86,7 +75,7 @@
       <div class="cartao-form entrar" style="--d:4" id="inscricao">
         <div class="cartao-topo">
           <h2>Preencha abaixo para se inscrever</h2>
-          <p class="cartao-sub">Você recebe o link da aula no seu e-mail e WhatsApp.</p>
+          <p class="cartao-sub">Você recebe o link da aula no seu WhatsApp.</p>
         </div>
         <form class="form-inscricao" novalidate>
           <label class="campo">
@@ -95,17 +84,13 @@
             <svg class="campo-ok" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
           </label>
           <label class="campo">
-            <input type="email" name="email" autocomplete="email" placeholder=" " required>
-            <span>E-mail</span>
-            <svg class="campo-ok" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
-          </label>
-          <label class="campo">
             <input type="tel" name="telefone" autocomplete="tel" inputmode="numeric" placeholder=" " required>
             <span>Telefone (WhatsApp)</span>
             <svg class="campo-ok" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>
           </label>
+          <input type="hidden" name="interesses" value="">
           <div class="form-barra" aria-hidden="true"><span></span></div>
-          <button type="submit" class="botao botao-seta">
+          <button type="submit" class="botao botao-seta botao-verde">
             <span>Quero participar da aula</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </button>
@@ -119,6 +104,14 @@
           <svg class="ok-desenho" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="m15 27 7 7 15-16"/></svg>
           <h3>Inscrição confirmada!</h3>
           <p>Em breve você recebe o link do Google Meet. Nos vemos na quarta-feira, ao vivo.</p>
+          <div class="ok-acoes">
+            <a class="botao botao-claro" id="okAgenda" target="_blank" rel="noopener" hidden>
+              <span>Adicionar à agenda</span>
+            </a>
+            <a class="botao botao-contorno" id="okZap" target="_blank" rel="noopener">
+              <span>Chamar alguém no WhatsApp</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -141,47 +134,74 @@
   <section class="para-quem" id="para-quem">
     <div class="container">
       <p class="sobretitulo revelar">A aula foi feita para você</p>
-      <h2 class="titulo-secao revelar">Para quem é <em>essa aula</em></h2>
+      <h2 class="titulo-secao titulo-rolar">Para quem é <em>essa aula</em></h2>
+      <p class="quem-dica revelar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 14a8 8 0 0 1-8 8"/><path d="M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1"/><path d="M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10"/><path d="M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>
+        Toque nos itens que têm a ver com você
+      </p>
 
       <ul class="lista-quem">
         <li class="revelar">
-          <span class="num">01</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9 9 15M9 9h.01M15 15h.01"/></svg>
-          <p>Para quem <b>não quer pagar juros abusivos</b> e pagar 3x o valor do imóvel</p>
+          <button type="button" class="quem" aria-pressed="false" data-cursor="marcar">
+            <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>
+            <svg class="quem-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9 9 15M9 9h.01M15 15h.01"/></svg>
+            <p>Para quem <b>não quer pagar juros abusivos</b> e pagar 3x o valor do imóvel</p>
+            <span class="num">01</span>
+          </button>
         </li>
         <li class="revelar">
-          <span class="num">02</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg>
-          <p>Para quem quer <b>construir patrimônio</b> de forma saudável</p>
+          <button type="button" class="quem" aria-pressed="false" data-cursor="marcar">
+            <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>
+            <svg class="quem-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg>
+            <p>Para quem quer <b>construir patrimônio</b> de forma saudável</p>
+            <span class="num">02</span>
+          </button>
         </li>
         <li class="revelar">
-          <span class="num">03</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
-          <p>Para quem quer aprender uma forma <b>simples e segura</b> de investir</p>
+          <button type="button" class="quem" aria-pressed="false" data-cursor="marcar">
+            <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>
+            <svg class="quem-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <p>Para quem quer aprender uma forma <b>simples e segura</b> de investir</p>
+            <span class="num">03</span>
+          </button>
         </li>
         <li class="revelar">
-          <span class="num">04</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>
-          <p>Para quem <b>não quer passar a vida toda pagando aluguel</b></p>
+          <button type="button" class="quem" aria-pressed="false" data-cursor="marcar">
+            <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>
+            <svg class="quem-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>
+            <p>Para quem <b>não quer passar a vida toda pagando aluguel</b></p>
+            <span class="num">04</span>
+          </button>
         </li>
         <li class="revelar">
-          <span class="num">05</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21h20"/><path d="M4 21V11l5-4 5 4v10"/><path d="M14 21v-7l4-3 3 3v7"/></svg>
-          <p>Para quem deseja ter <b>casas de aluguel como aposentadoria</b></p>
+          <button type="button" class="quem" aria-pressed="false" data-cursor="marcar">
+            <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>
+            <svg class="quem-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21h20"/><path d="M4 21V11l5-4 5 4v10"/><path d="M14 21v-7l4-3 3 3v7"/></svg>
+            <p>Para quem deseja ter <b>casas de aluguel como aposentadoria</b></p>
+            <span class="num">05</span>
+          </button>
         </li>
         <li class="revelar">
-          <span class="num">06</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
-          <p>Para quem <b>não tem dinheiro para a entrada</b> do financiamento</p>
+          <button type="button" class="quem" aria-pressed="false" data-cursor="marcar">
+            <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>
+            <svg class="quem-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+            <p>Para quem <b>não tem dinheiro para a entrada</b> do financiamento</p>
+            <span class="num">06</span>
+          </button>
         </li>
         <li class="revelar">
-          <span class="num">07</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          <p>Para quem <b>não consegue guardar dinheiro</b></p>
+          <button type="button" class="quem" aria-pressed="false" data-cursor="marcar">
+            <span class="marca" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg></span>
+            <svg class="quem-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <p>Para quem <b>não consegue guardar dinheiro</b></p>
+            <span class="num">07</span>
+          </button>
         </li>
         <li class="cta-item revelar">
-          <p>Se você se identificou com pelo menos um desses pontos, <b>essa aula é para você.</b></p>
-          <a href="#inscricao" class="botao botao-seta">
+          <div class="quem-placar" aria-live="polite"><b id="quemNum">0</b><span>de 7 marcados</span></div>
+          <div class="quem-barra" aria-hidden="true"><span></span></div>
+          <p id="quemTexto">Se você se identificou com pelo menos um desses pontos, <b>essa aula é para você.</b></p>
+          <a href="#inscricao" class="botao botao-seta botao-verde">
             <span>Garantir minha vaga</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -194,21 +214,24 @@
   <section class="como" id="como-funciona">
     <div class="container">
       <p class="sobretitulo revelar">Simples assim</p>
-      <h2 class="titulo-secao revelar">Como funciona a <em>carta de crédito</em></h2>
+      <h2 class="titulo-secao titulo-rolar">Como funciona a <em>carta de crédito</em></h2>
 
       <ol class="passos">
-        <li class="revelar">
+        <li>
           <span class="passo-num">1</span>
+          <svg class="passo-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M12 11v6M9 14h6"/></svg>
           <h3>Você escolhe o valor</h3>
           <p>Define o valor do imóvel que quer conquistar e entra em um grupo de pessoas com o mesmo objetivo.</p>
         </li>
-        <li class="revelar">
+        <li>
           <span class="passo-num">2</span>
+          <svg class="passo-ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
           <h3>Paga parcelas sem juros</h3>
           <p>As parcelas cabem no bolso e não têm juros: em vez de alimentar o banco, você constrói o seu patrimônio.</p>
         </li>
-        <li class="revelar">
+        <li>
           <span class="passo-num">3</span>
+          <svg class="passo-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></svg>
           <h3>É contemplado e compra</h3>
           <p>Por sorteio ou lance, você recebe a carta de crédito e compra o imóvel à vista, com poder de negociação.</p>
         </li>
@@ -221,38 +244,59 @@
   <section class="simulador" id="simulador">
     <div class="container">
       <p class="sobretitulo revelar">Faça a conta</p>
-      <h2 class="titulo-secao revelar">Financiamento <em>x</em> carta de crédito</h2>
+      <h2 class="titulo-secao titulo-rolar">Financiamento <em>x</em> carta de crédito</h2>
 
       <div class="sim-grade revelar">
         <div class="sim-controles">
+          <div class="sim-presets" role="group" aria-label="Valores prontos">
+            <button type="button" data-valor="200000">R$ 200 mil</button>
+            <button type="button" data-valor="350000">R$ 350 mil</button>
+            <button type="button" data-valor="500000">R$ 500 mil</button>
+            <button type="button" data-valor="1000000">R$ 1 milhão</button>
+          </div>
           <label class="sim-campo">
             <span>Valor do imóvel <output id="saidaValor">R$ 300.000</output></span>
-            <input type="range" id="simValor" min="100000" max="1500000" step="10000" value="300000">
+            <input type="range" id="simValor" min="100000" max="1500000" step="10000" value="300000" data-cursor="arraste">
           </label>
           <label class="sim-campo">
             <span>Prazo <output id="saidaPrazo">240 meses</output></span>
-            <input type="range" id="simPrazo" min="120" max="360" step="12" value="240">
+            <input type="range" id="simPrazo" min="120" max="360" step="12" value="240" data-cursor="arraste">
           </label>
-          <p class="sim-aviso">Simulação ilustrativa. Financiamento com entrada de 20% e juros de <span id="txtJuros">11,5</span>% ao ano (tabela Price, sem seguros e taxas). Carta de crédito com taxa de administração de <span id="txtTaxa">18</span>% no total, em até 240 meses. Valores reais variam conforme banco, administradora e correção das parcelas.</p>
+          <p class="sim-aviso">Simulação ilustrativa. Financiamento com entrada de <span id="txtEntrada">20</span>% e juros de <span id="txtJuros">11,5</span>% ao ano (tabela Price, sem seguros e taxas). Carta de crédito com taxa de administração de <span id="txtTaxa">18</span>% no total, em até <span id="txtPrazoCarta">240</span> meses. Valores reais variam conforme banco, administradora e correção das parcelas.</p>
         </div>
 
         <div class="sim-resultado">
+          <div class="sim-legenda" aria-hidden="true">
+            <span><i class="lg-base"></i>Valor do imóvel</span>
+            <span><i class="lg-extra"></i>Custo extra (juros ou taxa)</span>
+          </div>
           <div class="sim-linha">
             <div class="sim-rotulo"><span>Financiamento</span><b id="totFin">R$ 0</b></div>
-            <div class="sim-barra"><span id="barFin"></span></div>
+            <div class="sim-barra">
+              <span class="seg seg-base" id="segFinBase"></span>
+              <span class="seg seg-extra" id="segFinExtra"></span>
+            </div>
             <small id="detFin"></small>
           </div>
-          <div class="sim-linha boa">
+          <div class="sim-linha">
             <div class="sim-rotulo"><span>Carta de crédito</span><b id="totCon">R$ 0</b></div>
-            <div class="sim-barra"><span id="barCon"></span></div>
+            <div class="sim-barra">
+              <span class="seg seg-base" id="segConBase"></span>
+              <span class="seg seg-extra" id="segConExtra"></span>
+            </div>
             <small id="detCon"></small>
           </div>
+          <div class="sim-dica" role="tooltip" hidden></div>
           <div class="sim-economia">
             <span>Diferença estimada</span>
             <b id="economia">R$ 0</b>
             <small id="vezes"></small>
           </div>
-          <a href="#inscricao" class="botao botao-seta">
+          <table class="sr-only" aria-label="Resultado da simulação">
+            <thead><tr><th>Opção</th><th>Valor do imóvel</th><th>Custo extra</th><th>Total pago</th></tr></thead>
+            <tbody id="simTabela"></tbody>
+          </table>
+          <a href="#inscricao" class="botao botao-seta botao-verde">
             <span>Quero aprender na aula</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
@@ -266,28 +310,28 @@
     <div class="container faq-grade">
       <div>
         <p class="sobretitulo revelar">Dúvidas</p>
-        <h2 class="titulo-secao revelar">Perguntas <em>frequentes</em></h2>
+        <h2 class="titulo-secao titulo-rolar">Perguntas <em>frequentes</em></h2>
       </div>
       <div class="faq-lista">
         <details class="revelar">
           <summary>Preciso entender de investimentos?<i></i></summary>
-          <p>Não. A aula foi pensada para quem está começando: tudo é explicado de forma simples, passo a passo.</p>
+          <div class="faq-corpo"><p>Não. A aula foi pensada para quem está começando: tudo é explicado de forma simples, passo a passo.</p></div>
         </details>
         <details class="revelar">
           <summary>Como eu assisto à aula?<i></i></summary>
-          <p>A aula é ao vivo pelo Google Meet, na quarta-feira. Depois da inscrição você recebe o link no e-mail e no WhatsApp. Funciona no celular ou no computador.</p>
+          <div class="faq-corpo"><p>A aula é ao vivo pelo Google Meet, na quarta-feira. Depois da inscrição você recebe o link no WhatsApp. Funciona no celular ou no computador.</p></div>
         </details>
         <details class="revelar">
           <summary>Quanto tempo dura?<i></i></summary>
-          <p>Menos de uma hora, direto ao ponto.</p>
+          <div class="faq-corpo"><p>Menos de uma hora, direto ao ponto.</p></div>
         </details>
         <details class="revelar">
           <summary>Carta de crédito tem juros?<i></i></summary>
-          <p>Não. No lugar dos juros existe uma taxa de administração, normalmente bem menor do que o custo de um financiamento. Na aula você entende a diferença na prática.</p>
+          <div class="faq-corpo"><p>Não. No lugar dos juros existe uma taxa de administração, normalmente bem menor do que o custo de um financiamento. Na aula você entende a diferença na prática.</p></div>
         </details>
         <details class="revelar">
           <summary>E se eu não tiver dinheiro para a entrada?<i></i></summary>
-          <p>A carta de crédito não exige entrada como o financiamento. Na aula mostramos como começar com parcelas que cabem no seu orçamento.</p>
+          <div class="faq-corpo"><p>A carta de crédito não exige entrada como o financiamento. Na aula mostramos como começar com parcelas que cabem no seu orçamento.</p></div>
         </details>
       </div>
     </div>
@@ -295,10 +339,11 @@
 
   <!-- FECHAMENTO -->
   <section class="fechamento">
+    <div class="fechamento-fundo" aria-hidden="true">Ao vivo · Quarta-feira · Ao vivo · Quarta-feira · Ao vivo</div>
     <div class="container">
-      <h2 class="revelar">Quarta-feira, <em>ao vivo</em> no Google Meet</h2>
-      <p class="revelar">Em menos de uma hora você entende como as cartas de crédito podem colocar o seu patrimônio de pé, sem juros e sem financiamento.</p>
-      <a href="#inscricao" class="botao botao-grande botao-seta revelar">
+      <h2 class="titulo-rolar">Quarta-feira, <em>ao vivo</em> no Google Meet</h2>
+      <p class="preencher">Em menos de uma hora você entende como as cartas de crédito podem colocar o seu patrimônio de pé, sem juros e sem financiamento.</p>
+      <a href="#inscricao" class="botao botao-grande botao-seta botao-verde revelar">
         <span>Quero me inscrever agora</span>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -314,6 +359,11 @@
 
   <!-- botão fixo no celular -->
   <a href="#inscricao" class="cta-fixo">Quero participar da aula</a>
+
+  <!-- voltar ao topo (computador) -->
+  <button type="button" class="topo-btn" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><circle class="anel-fundo" cx="24" cy="24" r="21"/><circle class="anel" cx="24" cy="24" r="21"/><path d="M24 31V17M18 23l6-6 6 6"/></svg>
+  </button>
 
   <script src="config.js"></script>
   <script src="script.js"></script>

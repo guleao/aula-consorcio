@@ -8,6 +8,6 @@
 4. Clique em **Implantar**, autorize com a sua conta e copie o **URL do app da Web** (termina em `/exec`).
 5. Abra `config.js` e cole o endereço em `urlPlanilha: "..."`. Salve e suba no GitHub (o site atualiza sozinho em ~1 minuto).
 
-Pronto: cada inscrição aparece na aba **Inscritos** com data, nome, e-mail, telefone e a origem (UTM).
+Pronto: cada inscrição aparece na aba **Inscritos** com data, nome, telefone e a origem (UTM). (A coluna de e-mail fica vazia: o formulário não pede mais e-mail.)
 
 Opcional: em `config.js`, `redirecionarPara` leva a pessoa para outro link depois de se inscrever (ex.: grupo de WhatsApp da aula).

@@ -6,6 +6,19 @@
   const semMovimento = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const brl = (v) => "R$ " + Math.round(v).toLocaleString("pt-BR");
 
+  // sempre abrir no topo: o celular restaurava a posição antiga ou pulava para um #link
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  const irTopo = () => {
+    const html = document.documentElement;
+    html.style.scrollBehavior = "auto";
+    scrollTo(0, 0);
+    html.style.scrollBehavior = "";
+  };
+  irTopo();
+  addEventListener("load", irTopo);
+  addEventListener("pageshow", (e) => { if (e.persisted) irTopo(); });
+
   $("#ano").textContent = new Date().getFullYear();
 
   // ---------- título palavra por palavra ----------
@@ -215,7 +228,6 @@
 
   const regras = {
     nome: (v) => v.trim().length >= 3,
-    email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
     telefone: (v) => { const d = v.replace(/\D/g, ""); return d.length === 10 || d.length === 11; }
   };
   function conferir(campo, marcarErro) {
@@ -228,7 +240,7 @@
   }
   function atualizarBarra() {
     const n = Object.keys(regras).filter((k) => regras[k](form.elements[k].value)).length;
-    barraForm.style.width = (n / 3 * 100) + "%";
+    barraForm.style.width = (n / Object.keys(regras).length * 100) + "%";
   }
   Object.keys(regras).forEach((k) => {
     const c = form.elements[k];
@@ -258,7 +270,6 @@
     }
     const dados = new URLSearchParams({
       nome: form.elements.nome.value.trim(),
-      email: form.elements.email.value.trim(),
       telefone: tel.value.trim(),
       pagina: location.href.split("?")[0],
       ...utm
@@ -272,6 +283,13 @@
         await fetch(cfg.urlPlanilha, { method: "POST", mode: "no-cors", body: dados });
       } else {
         await new Promise((r) => setTimeout(r, 700));
+      }
+      // por enquanto a inscrição continua no WhatsApp
+      const zap = String(cfg.whatsapp || "").replace(/\D/g, "");
+      if (zap) {
+        const texto = (cfg.mensagemWhatsapp || "").replace("{nome}", form.elements.nome.value.trim());
+        location.href = "https://wa.me/" + zap + (texto ? "?text=" + encodeURIComponent(texto) : "");
+        return;
       }
       if (cfg.redirecionarPara) { location.href = cfg.redirecionarPara; return; }
       form.hidden = true;
