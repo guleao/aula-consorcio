@@ -4,10 +4,10 @@ Landing page da aula ao vivo "Como construir patrimônio através de cartas de c
 Site estático (HTML + CSS + JS puros), sem build. Publicado pelo GitHub Pages.
 
 ## Estrutura
-- `index.html` — a página: letreiro (quarta-feira · ao vivo no Google Meet), dobra 1 (promessa + formulário), dobra 2 (para quem é), fechamento.
-- `style.css` — cores (preto, branco, vermelho `#e50914`), fontes e layout responsivo.
-- `script.js` — máscara de telefone, validação e envio do formulário (guarda as UTMs).
-- `config.js` — **único arquivo a editar**: endereço da planilha e link de redirecionamento.
+- `index.html` — a página: letreiro + barra de progresso, dobra 1 (promessa + formulário), faixa, para quem é, como funciona, simulador financiamento x carta de crédito, perguntas, fechamento, botão fixo no celular.
+- `style.css` — cores (preto, branco, vermelho `#e50914`), fontes, animações e layout responsivo.
+- `script.js` — título palavra por palavra, revelar ao rolar, contagem regressiva, simulador, validação e envio do formulário (guarda as UTMs).
+- `config.js` — **único arquivo a editar**: planilha, redirecionamento, data da aula (contagem) e números do simulador.
 - `apps-script.gs` + `PLANILHA.md` — como receber as inscrições numa planilha do Google.
 
 ## Editar textos
