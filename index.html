@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aula ao vivo · Construa patrimônio com cartas de crédito</title>
+  <meta name="description" content="Aprenda em menos de uma hora a construir patrimônio através de cartas de crédito, sem pagar juros e sem financiamento. Quarta-feira, ao vivo no Google Meet.">
+  <meta property="og:title" content="Aula ao vivo · Construa patrimônio com cartas de crédito">
+  <meta property="og:description" content="Sem juros e sem financiamento. Quarta-feira, ao vivo no Google Meet. Inscrição gratuita.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Cpath d='M8 22V13l8-5 8 5v9h-5v-6h-6v6z' fill='%23e50914'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LETREIRO -->
+  <div class="letreiro" aria-label="Quarta-feira · Ao vivo no Google Meet">
+    <div class="letreiro-trilha" aria-hidden="true">
+      <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
+      <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
+      <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
+      <span>Quarta-feira</span><i></i><span>Ao vivo no Google Meet</span><i></i><span>Inscrição gratuita</span><i></i><span>Vagas limitadas</span><i></i>
+    </div>
+  </div>
+
+  <!-- DOBRA 1: PROMESSA + FORMULÁRIO -->
+  <header class="hero" id="topo">
+    <div class="hero-fundo" aria-hidden="true"></div>
+    <div class="container hero-grade">
+      <div class="hero-texto">
+        <p class="selo"><span class="ponto-vivo"></span> Aula ao vivo e gratuita</p>
+        <h1>
+          Aprenda em <em>menos de uma hora</em> a construir patrimônio através de
+          <em>cartas de crédito</em>
+        </h1>
+        <p class="hero-sem">
+          <span>Sem pagar juros.</span>
+          <span>Sem fazer financiamento.</span>
+        </p>
+        <p class="hero-sub">
+          Faça parte da nova geração de brasileiros que buscam um planejamento
+          <strong>seguro e confiável</strong> para a construção de patrimônio.
+        </p>
+        <ul class="hero-info">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span><b>Quarta-feira</b></span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 8-6 4 6 4V8Z"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+            <span><b>Ao vivo</b> no Google Meet</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Menos de <b>1 hora</b></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cartao-form" id="inscricao">
+        <h2>Preencha abaixo para se inscrever</h2>
+        <p class="cartao-sub">Você recebe o link da aula no seu e-mail e WhatsApp.</p>
+        <form class="form-inscricao" novalidate>
+          <label>
+            <span>Nome</span>
+            <input type="text" name="nome" autocomplete="name" placeholder="Seu nome completo" required>
+          </label>
+          <label>
+            <span>E-mail</span>
+            <input type="email" name="email" autocomplete="email" placeholder="seuemail@exemplo.com" required>
+          </label>
+          <label>
+            <span>Telefone (WhatsApp)</span>
+            <input type="tel" name="telefone" autocomplete="tel" inputmode="numeric" placeholder="(00) 00000-0000" required>
+          </label>
+          <button type="submit" class="botao">Quero participar da aula</button>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+          <p class="form-priv">Seus dados estão seguros. Não enviamos spam.</p>
+        </form>
+        <div class="form-ok" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+          <h3>Inscrição confirmada!</h3>
+          <p>Em breve você recebe o link do Google Meet. Nos vemos na quarta-feira, ao vivo.</p>
+        </div>
+      </div>
+    </div>
+
+    <a class="rolar" href="#para-quem" aria-label="Ver para quem é a aula">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </a>
+  </header>
+
+  <!-- DOBRA 2: PARA QUEM É -->
+  <section class="para-quem" id="para-quem">
+    <div class="container">
+      <p class="sobretitulo">A aula foi feita para você</p>
+      <h2 class="titulo-secao">Para quem é <em>essa aula</em></h2>
+
+      <ul class="lista-quem">
+        <li>
+          <span class="num">01</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9 9 15M9 9h.01M15 15h.01"/></svg>
+          <p>Para quem <b>não quer pagar juros abusivos</b> e pagar 3x o valor do imóvel</p>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/></svg>
+          <p>Para quem quer <b>construir patrimônio</b> de forma saudável</p>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p>Para quem quer aprender uma forma <b>simples e segura</b> de investir</p>
+        </li>
+        <li>
+          <span class="num">04</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-6h6v6"/></svg>
+          <p>Para quem <b>não quer passar a vida toda pagando aluguel</b></p>
+        </li>
+        <li>
+          <span class="num">05</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21h20"/><path d="M4 21V11l5-4 5 4v10"/><path d="M14 21v-7l4-3 3 3v7"/></svg>
+          <p>Para quem deseja ter <b>casas de aluguel como aposentadoria</b></p>
+        </li>
+        <li>
+          <span class="num">06</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg>
+          <p>Para quem <b>não tem dinheiro para a entrada</b> do financiamento</p>
+        </li>
+        <li>
+          <span class="num">07</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5Z"/><path d="M2 9v1c0 1.1.9 2 2 2h1"/></svg>
+          <p>Para quem <b>não consegue guardar dinheiro</b></p>
+        </li>
+        <li class="cta-item">
+          <p>Se você se identificou com pelo menos um desses pontos, <b>essa aula é para você.</b></p>
+          <a href="#inscricao" class="botao">Garantir minha vaga</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FECHAMENTO -->
+  <section class="fechamento">
+    <div class="container">
+      <h2>Quarta-feira, <em>ao vivo</em> no Google Meet</h2>
+      <p>Em menos de uma hora você entende como as cartas de crédito podem colocar o seu patrimônio de pé, sem juros e sem financiamento.</p>
+      <a href="#inscricao" class="botao botao-grande">Quero me inscrever agora</a>
+    </div>
+  </section>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>© <span id="ano">2026</span> · Todos os direitos reservados.</p>
+      <p class="rodape-aviso">Este conteúdo tem caráter educativo e não constitui recomendação de investimento.</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
