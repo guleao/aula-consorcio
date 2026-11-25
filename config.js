@@ -16,6 +16,10 @@ window.CONFIG = {
   // confirmação na página.
   redirecionarPara: "https://chat.whatsapp.com/DiQmH22ANQv2baCRX3XhgK",
 
+  // Pixel da Meta (Facebook/Instagram Ads): só o número do ID, ex.: "123456789012345".
+  // Registra a visita (PageView) e cada inscrição enviada (Lead). Vazio = sem pixel.
+  pixelMeta: "",
+
   // Opcional: data e hora da aula, para mostrar a contagem regressiva.
   // Formato: "2026-12-02T20:00:00-03:00" (ano-mês-diaThora:min:seg-03:00).
   // Vazio = a contagem fica escondida.

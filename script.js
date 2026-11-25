@@ -6,6 +6,19 @@
   const semMovimento = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const brl = (v) => "R$ " + Math.round(v).toLocaleString("pt-BR");
 
+  // Pixel da Meta: código oficial, ligado só se houver ID no config.js
+  const pixelId = String(cfg.pixelMeta || "").replace(/\D/g, "");
+  if (pixelId) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq("init", pixelId);
+    fbq("track", "PageView");
+  }
+  const rastrear = (evento) => { if (pixelId && window.fbq) fbq("track", evento); };
+
   // sempre abrir no topo: o celular restaurava a posição antiga ou pulava para um #link
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   if (location.hash) history.replaceState(null, "", location.pathname + location.search);
@@ -284,6 +297,8 @@
       } else {
         await new Promise((r) => setTimeout(r, 700));
       }
+      // conta a inscrição no pixel e dá um instante pro envio sair antes de trocar de página
+      if (pixelId) { rastrear("Lead"); await new Promise((r) => setTimeout(r, 400)); }
       // por enquanto a inscrição continua no WhatsApp
       const zap = String(cfg.whatsapp || "").replace(/\D/g, "");
       if (zap) {
